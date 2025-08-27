@@ -1,0 +1,17 @@
+@use "../settings/colors" as *;
+
+.cont {
+  height: 100%;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    padding: 59px 20px 13px 20px;
+  }
+
+  @media (min-width: 768px) {
+    width: 75%;
+    margin: auto;
+    padding: 170px 0 104px 0;
+    border: 1px solid $border-color;
+  }
+}

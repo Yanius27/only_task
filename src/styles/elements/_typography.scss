@@ -1,0 +1,29 @@
+@use "../settings/variables" as *;
+@use "../settings/colors" as *;
+
+body {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-base;
+  color: $text-color;
+
+  @media (max-width: 767px) {
+    font-size: $font-size-xs;
+  }
+
+  @media (min-width: 768px) {
+    font-size: $font-size-base;
+  }
+}
+
+h1 {
+  font-weight: $font-weight-bold;
+
+  @media (max-width: 767px) {
+    font-size: $font-size-base;
+  }
+
+  @media (min-width: 768px) {
+    font-size: $font-size-xl;
+  }
+}
