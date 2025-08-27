@@ -2,6 +2,7 @@
 
 .cont {
   height: 100%;
+  box-sizing: border-box;
 
   @media (max-width: 767px) {
     width: 100%;
@@ -12,6 +13,7 @@
     width: 75%;
     margin: auto;
     padding: 170px 0 104px 0;
-    border: 1px solid $border-color;
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
   }
 }

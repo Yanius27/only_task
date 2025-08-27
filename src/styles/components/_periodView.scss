@@ -1,25 +1,27 @@
 @use "../settings/variables" as *;
+@use "../settings/colors" as *;
 
-.title {
-  line-height: $line-height-small;
-  position: relative;
+.PeriodView {
+  .PeriodView__years {
+    display: flex;
+    justify-content: space-between;
 
-  @media (max-width: 767px) {
-    max-width: 123px;
+     @media (max-width: 767px) {
+        width: 273px;
+        font-size: $font-size-xl;
+      }
+
+      @media (min-width: 768px) {
+        width: 973px;
+        font-size: $font-size-2xl;
+      }
   }
 
-  @media (min-width: 768px) {
-    max-width: 431px;
-    padding-left: 78px;
+  .PeriodView__years span:nth-last-of-type(1n) {
+    color: $primary-color;
+  }
 
-    &::before {
-      content: "";
-      width: 5px;
-      height: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-      background: linear-gradient(#3877EE, #EF5DA8);
-    }
+  .PeriodView__years span:nth-last-of-type(2n) {
+    color: $second-color;
   }
 }
