@@ -1,12 +1,15 @@
 @use "../settings/variables" as *;
 
 .PeriodContainer {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
 
   .PeriodContainer__title {
     line-height: $line-height-small;
     position: relative;
+    user-select: none;
 
     @media (max-width: 767px) {
       max-width: 123px;

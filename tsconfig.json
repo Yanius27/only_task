@@ -16,7 +16,5 @@
     "jsx": "react-jsx",
     "moduleDetection": "force",
   },
-  "include": [
-    "src/**/*",
-  ]
+  "include": ["src"]
 }

@@ -28,13 +28,17 @@ export default {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: "ts-loader",
-        exclude: /node_modules/,
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.css?$/i,
-        use: ["style-loader", "ts-loader"],
+        test: /\.svg$/,
+        use: [{
+          loader: "@svgr/webpack",
+          options: {
+            icons: true,
+          },
+        }],
       },
       {
         test: /\.s[ac]ss$/i,
@@ -44,7 +48,12 @@ export default {
           "sass-loader",
         ],
       },
- {
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
+      {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         use: [
           {

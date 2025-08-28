@@ -1,5 +1,6 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
+import { data } from "../../lib/data";
 import { IPeriodContext } from "../types/interfaces";
 
 const PeriodContext = createContext<IPeriodContext | undefined>(undefined);
@@ -7,6 +8,10 @@ const PeriodContext = createContext<IPeriodContext | undefined>(undefined);
 export const PeriodProvider = ({ children }: { children: React.ReactNode }) => {
   const [periods, setPeriods] = useState<number[]>([]);
   const [currentPeriod, setCurrentPeriod] = useState(0);
+
+  useEffect(() => {
+    setPeriods(() => Array.from({ length: data.length }, (_, i) => i));
+  }, [data]);
 
   return (
     <PeriodContext.Provider value={{ periods, currentPeriod, setPeriods, setCurrentPeriod }}>
