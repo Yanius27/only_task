@@ -7,11 +7,11 @@ body {
   line-height: $line-height-base;
   color: $text-color;
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     font-size: $font-size-xs;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     font-size: $font-size-base;
   }
 }
@@ -19,11 +19,15 @@ body {
 h1 {
   font-weight: $font-weight-bold;
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     font-size: $font-size-base;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) and (max-width: 1919) {
+    font-size: $font-size-lg;
+  }
+
+  @media (min-width: 1920px) {
     font-size: $font-size-xl;
   }
 }

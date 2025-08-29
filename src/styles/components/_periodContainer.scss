@@ -11,11 +11,11 @@
     position: relative;
     user-select: none;
 
-    @media (max-width: 767px) {
+    @media (max-width: 1023px) {
       max-width: 123px;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       max-width: 431px;
       padding-left: 78px;
 

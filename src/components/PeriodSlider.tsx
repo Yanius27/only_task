@@ -16,7 +16,16 @@ export default function PeriodSlider({ items }: { items: IFact[] }) {
 
     swiperInstanceRef.current = new Swiper(swiperRef.current, {
       direction: "horizontal",
-      slidesPerView: 1.5,
+      slidesPerView: "auto",
+      slidesOffsetAfter: 400,
+      breakpoints: {
+        500: {
+          slidesOffsetAfter: 250,
+        },
+        640: {
+          slidesOffsetAfter: 100,
+        }
+      },
       spaceBetween: 25,
     });
   }, []);
