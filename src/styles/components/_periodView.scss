@@ -44,11 +44,6 @@
       gap: 24px
     }
 
-    // @media (min-width: 1440px) {
-    //   width: 20vw !important;
-    //   font-size: $font-size-xl;
-    // }
-
     @media (min-width: 1920px) {
       width: 973px !important;
       font-size: $font-size-3xl;
@@ -102,12 +97,15 @@
       bottom: 0;
 
       flex-direction: column;
+      align-items: start;
+      padding-left: 80px;
     }
 
     .PeriodView__footer-slider {
       display: none;
       @media (min-width: 1024px) {
         display: block;
+        width: 85%;
       }
     }
 
@@ -130,7 +128,7 @@
       }
 
       .PeriodView__navigation-items div {
-        opacity: 0.65;
+        opacity: 0.5;
       }
 
       .PeriodView__navigation-count {
@@ -147,6 +145,11 @@
           }
 
           @media (min-width: 1024px) {
+            width: 30px;
+            height: 30px;
+          }
+
+          @media (min-width: 1920px) {
             width: 50px;
             height: 50px;
           }

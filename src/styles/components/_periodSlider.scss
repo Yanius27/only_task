@@ -25,15 +25,66 @@
     }
   }
 
+  .PeriodSlider__navigation {
+    width: 95%;
+
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    display: none;
+
+    @media (min-width: 1024px) {
+      display: block;
+    }  
+  }
+
+  .PeriodSlider__navigation-prev,
+  .PeriodSlider__navigation-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
+    position: absolute;
+    top: 0;
+
+    display: none;
+
+    cursor: pointer;
+
+    filter: drop-shadow(0 0px 4px rgba(56, 119, 238, 0.1));
+  }
+
+  .PeriodSlider__navigation-prev.visible,
+  .PeriodSlider__navigation-next.visible {
+    display: flex;
+  }
+
+  .PeriodSlider__navigation-prev {
+    left: 0;
+    transform: scale(-1);
+  }
+
+  .PeriodSlider__navigation-next {
+    right: 0;
+  }
+
   .PeriodSlider__swiper-slide {
     display: flex;
     flex-direction: column;
     gap: 15px;
     
-    max-width: 166px;
+    @media (max-width: 500px) {
+      max-width: 166px;
+    }
 
-    @media (min-width: 1023px) and (max-width: 1919px) {
+    @media (min-width: 1024px) {
       gap: 8px;
+      width: 33% !important;
     }  
 
 
