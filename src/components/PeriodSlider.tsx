@@ -17,7 +17,7 @@ export default function PeriodSlider({ items }: { items: IFact[] }) {
     swiperInstanceRef.current = new Swiper(swiperRef.current, {
       direction: "horizontal",
       slidesPerView: "auto",
-      slidesOffsetAfter: 400,
+      slidesOffsetAfter: 320,
       breakpoints: {
         500: {
           slidesOffsetAfter: 250,
@@ -37,7 +37,7 @@ export default function PeriodSlider({ items }: { items: IFact[] }) {
           {items.map((fact, index) => (
             <div key={index} className="PeriodSlider__swiper-slide swiper-slide">
               <div className="PeriodSlider__swiper-slide-year">{fact.year}</div>
-              <div className="PeriodSlider__swiper-content">{fact.content}</div>
+              <div className="PeriodSlider__swiper-slide-content">{fact.content}</div>
             </div>
           ))}
         </div>

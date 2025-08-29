@@ -2,43 +2,71 @@
 @use "../settings/colors" as *;
 
 .PeriodSlider {
-  position: absolute;
-  z-index: 2;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
   padding-top: 20px;
-  border-top: 1 solid $border-color-2;
 
-  @media (min-width: 1024px) {
-    display: none;
-  }
-
-  &::before {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 87.5vw;
-    background-color: $border-color-2;
-
+  
+  @media (max-width: 1023px) {
     position: absolute;
-    top: 0;
+    z-index: 2;
     left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &::before {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 87.5vw;
+      background-color: $border-color-2;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
   }
 
   .PeriodSlider__swiper-slide {
     display: flex;
     flex-direction: column;
-    gap:15px;
-
+    gap: 15px;
+    
     max-width: 166px;
+
+    @media (min-width: 1023px) and (max-width: 1919px) {
+      gap: 8px;
+    }  
+
 
     .PeriodSlider__swiper-slide-year {
       color: $year-color;
+
+      @media (max-width: 1023px) {
+        font-size: $font-size-sm;
+      }
+
+      @media (min-width: 1023px) and (max-width: 1919px) {
+        font-size: $font-size-xs;
+      }  
+
+      @media (min-width: 1920px) {
+        font-size: $font-size-lg;
+      }  
     }
 
     .PeriodSlider__swiper-slide-content {
       color: $text-color;
+
+      @media (max-width: 1023px) {
+        font-size: $font-size-xs;
+      }
+
+      @media (min-width: 1023px) and (max-width: 1919px) {
+        font-size: $font-size-2xs;
+      }  
+
+      @media (min-width: 1920px) {
+        font-size: $font-size-base;
+      }  
     }
   }
 }

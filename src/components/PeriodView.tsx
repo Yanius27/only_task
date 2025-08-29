@@ -109,7 +109,9 @@ export default function PeriodView({ children, slidesCount, currentSlide, setCur
 
   return (
     <div className="PeriodView">
-      <div>{children}</div>
+      <div className="PeriodView__slider">
+        {children}
+      </div>   
       <div className="PeriodView__swiper swiper" ref={swiperRef}>
         <div className="swiper-wrapper">
           {data.map((_, index) => (
@@ -132,34 +134,39 @@ export default function PeriodView({ children, slidesCount, currentSlide, setCur
             </div>
           ))}
         </div>
-        <div className="PeriodView__footer">
-          
-          <div className="PeriodView__navigation">
 
-            <div className="PeriodView__navigation-count">
-              <div ref={currentNumberRef}>{getFormattedNumber(currentSlide)}</div>
-              <div> {`/${getFormattedNumber(slidesCount, false)}`}</div>
+
+      </div>
+      <div className="PeriodView__footer">
+          
+        <div className="PeriodView__navigation">
+
+          <div className="PeriodView__navigation-count">
+            <div ref={currentNumberRef}>{getFormattedNumber(currentSlide)}</div>
+            <div> {`/${getFormattedNumber(slidesCount, false)}`}</div>
+          </div>
+
+          <div className="PeriodView__navigation-items">
+
+            <div ref={prevRef} className="PeriodView__navigation-prev">
+              <ArrowIcon />
             </div>
 
-            <div className="PeriodView__navigation-items">
-
-              <div ref={prevRef} className="PeriodView__navigation-prev">
+            <div ref={nextRef} className="PeriodView__navigation-next active">
                 <ArrowIcon />
-              </div>
-
-              <div ref={nextRef} className="PeriodView__navigation-next active">
-                <ArrowIcon />
-              </div>
-
             </div>
 
           </div>
 
-          <div className="PeriodView__pagination swiper-pagination"></div>
-
         </div>
 
-      </div>
+        <div className="PeriodView__footer-slider">
+            {children}
+        </div>   
+
+        <div className="PeriodView__pagination swiper-pagination"></div>
+
+        </div>
     </div>
   );
 }

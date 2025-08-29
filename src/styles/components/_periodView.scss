@@ -35,12 +35,13 @@
       font-size: $font-size-xl;
     }
 
-    @media (min-width: 321px) and (max-width: 1920px) {
+    @media (min-width: 321px) and (max-width: 499px) {
       font-size: 18vw;
     }
 
     @media (min-width: 500px) and (max-width: 1919px) {
       font-size: $font-size-2xl;
+      gap: 24px
     }
 
     // @media (min-width: 1440px) {
@@ -50,7 +51,7 @@
 
     @media (min-width: 1920px) {
       width: 973px !important;
-      font-size: $font-size-2xl;
+      font-size: $font-size-3xl;
     }
 
     & span:nth-last-of-type(1n) {
@@ -69,11 +70,46 @@
   .PeriodView__swiper {
     display: flex;
     flex-direction: column;
+
+    @media (min-width: 1024px) {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .PeriodView__slider {
+    @media (min-width: 1024px) {
+      display: none;
+    }
   }
 
   .PeriodView__footer {
     display: flex;
     align-items: center;
+
+    @media (max-width: 1023px) {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    @media (min-width: 1024px) {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      flex-direction: column;
+    }
+
+    .PeriodView__footer-slider {
+      display: none;
+      @media (min-width: 1024px) {
+        display: block;
+      }
+    }
 
     .PeriodView__navigation {
       display: flex;

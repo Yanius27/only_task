@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20000" height="2" viewBox="0 0 20000 2" preserveAspectRatio="xMidYMid meet">
+  <line x1="0" y1="0.5" x2="20000" y2="0.5"
+        stroke="#42567A"
+        stroke-width="2"
+        stroke-opacity="0.1"
+        stroke-linecap="butt"
+        shape-rendering="crispEdges"
+        vector-effect="non-scaling-stroke"/>
+</svg>
