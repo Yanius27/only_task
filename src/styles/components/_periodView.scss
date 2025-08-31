@@ -69,7 +69,7 @@
     @media (min-width: 1024px) {
       position: fixed;
       left: 50%;
-      top: 50%;
+      top: 45%;
       transform: translate(-50%, -50%);
     }
   }
@@ -83,6 +83,7 @@
   .PeriodView__footer {
     display: flex;
     align-items: center;
+    pointer-events: none;
 
     @media (max-width: 1023px) {
       width: 100%;
@@ -92,9 +93,13 @@
     }
 
     @media (min-width: 1024px) {
+      width: 100%;
+      box-sizing: border-box;
+
       position: absolute;
       left: 0;
       bottom: 0;
+      z-index: 3;
 
       flex-direction: column;
       align-items: start;
@@ -103,9 +108,14 @@
 
     .PeriodView__footer-slider {
       display: none;
+
       @media (min-width: 1024px) {
         display: block;
-        width: 85%;
+        width: 89%;
+
+        .swiper-wrapper {
+          pointer-events: all !important;
+        }
       }
     }
 
@@ -116,6 +126,8 @@
 
       position: relative;
       z-index: 11;
+
+      pointer-events: all;
 
       .PeriodView__navigation-items {
         display: flex;

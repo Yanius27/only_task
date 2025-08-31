@@ -36,7 +36,7 @@ export default {
         use: [{
           loader: "@svgr/webpack",
           options: {
-            icons: true,
+            icon: true,
           },
         }],
       },
@@ -71,6 +71,9 @@ export default {
 
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
+    alias: {
+      src: path.resolve(__dirName, 'src')
+    }
   },
 
   plugins: [

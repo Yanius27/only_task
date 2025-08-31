@@ -8,7 +8,7 @@ import "swiper/css";
 import cn from "classnames";
 
 import { data } from "../../lib/data";
-import ArrowIcon from "../assets/icons/arrow-left.svg";
+import ArrowIcon from "src/assets/icons/arrow-left.svg";
 import { getFormattedNumber } from "../utils/getFormattedNumber";
 import { IPeriodView } from "../types/interfaces";
 
@@ -106,6 +106,10 @@ export default function PeriodView({ children, slidesCount, currentSlide, setCur
       },
     });
   }, [prevRef.current, nextRef.current]);
+
+  useEffect(() => {
+    swiperInstanceRef.current?.slideTo(currentSlide, 0);
+  }, [currentSlide]);
 
   return (
     <div className="PeriodView">

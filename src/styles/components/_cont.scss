@@ -23,32 +23,87 @@
   
   .cont__ornament-first {
     width: 100%;
-    height: auto;
+    height: 1px;
 
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 0;
     right: 0;
   }
 
   .cont__ornament-second {
-    width: auto;
     height: 100%;
+    width: 1px;
 
     position: absolute;
     top: 0;
     left: 50%;
   }
 
-  .cont__circle {
-
-    width: 37.3%;
-    aspect-ratio: 1 / 1;
+  .circle {
+    width: 27.6vw;
+    height: 27.6vw;
 
     position: absolute;
-    top: 50%;
+    z-index: 3;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    border-radius: 100%;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .circle__dot {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      transform: translate(-50%, -50%);
+
+      border-radius: 100%;
+
+      cursor: pointer;
+      pointer-events: all;
+
+      &:not(.active):before {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 6px;
+        background-color: $text-color;
+        border-radius: 100%;
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        pointer-events: none;
+      }
+
+      span {
+        opacity: 0;
+      }
+
+      &.active {
+        width: 2.82vw;
+        height: 2.82vw;
+        
+        background-color: $page-color;
+        border: 1px solid $stroke-color;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+          opacity: 1;
+        }
+      }
+    }
   }
 
   @media (max-width: 1023px) {

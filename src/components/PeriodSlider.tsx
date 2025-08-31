@@ -5,7 +5,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css";
-import ArrowIcon from "../assets/icons/arrow-right.svg";
+import ArrowIcon from "src/assets/icons/arrow-right.svg";
 
 import { IFact } from "../types/interfaces";
 
