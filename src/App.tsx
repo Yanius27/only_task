@@ -1,4 +1,4 @@
-import PeriodContainer from "./components/PeriodContainer";
+import PeriodContainer from "./components/PeriodContainer/PeriodContainer";
 import { PeriodProvider } from "./context/PeriodContext";
 
 import FirstOrnament from "./assets/icons/ornament-1.svg";

@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-
 import Swiper, {Swiper as SwiperType} from "swiper";
 import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
@@ -7,7 +6,9 @@ import "swiper/css/pagination";
 import "swiper/css";
 import ArrowIcon from "src/assets/icons/arrow-right.svg";
 
-import { IFact } from "../types/interfaces";
+import { IFact } from "../../types/interfaces";
+
+import "./PeriodSlider.scss";
 
 export default function PeriodSlider({ items }: { items: IFact[] }) {
   const swiperRef = useRef<HTMLDivElement | null>(null);

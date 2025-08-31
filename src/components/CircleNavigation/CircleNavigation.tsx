@@ -7,7 +7,6 @@ import { useEffect, useRef, useState } from "react";
 export default function CircleNavigation() {
   const { periods, currentPeriod, setCurrentPeriod } = usePeriods();
   const contRef = useRef<HTMLDivElement | null>(null);
-  const svgRef = useRef<SVGSVGElement | null>(null);
   const [size, setSize] = useState(0);
 
   const changeSize = () => {

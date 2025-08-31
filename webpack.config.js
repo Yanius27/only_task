@@ -45,7 +45,14 @@ export default {
         use: [
           "style-loader",
           "css-loader",
-          "sass-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              sassOptions: {
+                includePaths: ["./src"],
+              },
+            }
+          }
         ],
       },
       {
@@ -72,7 +79,7 @@ export default {
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
     alias: {
-      src: path.resolve(__dirName, 'src')
+      src: path.resolve(__dirName, 'src'),
     }
   },
 

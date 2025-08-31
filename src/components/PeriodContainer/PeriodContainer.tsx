@@ -1,8 +1,10 @@
-import PeriodSlider from "./PeriodSlider";
-import PeriodView from "./PeriodView";
+import PeriodSlider from "../PeriodSlider/PeriodSlider";
+import PeriodView from "../PeriodView/PeriodView";
 
-import { data } from "../../lib/data";
-import { usePeriods } from "../context/PeriodContext";
+import { data } from "../../../lib/data";
+import { usePeriods } from "../../context/PeriodContext";
+
+import "./PeriodContainer.scss";
 
 export default function PeriodContainer() {
   const { periods, currentPeriod, setCurrentPeriod } = usePeriods();

@@ -1,5 +1,5 @@
-@use "../settings/variables" as *;
-@use "../settings/colors" as *;
+@use "src/styles/settings/variables" as *;
+@use "src/styles/settings/colors" as *;
 
 .PeriodSlider {
   padding-top: 20px;

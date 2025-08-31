@@ -1,4 +1,4 @@
-@use "../settings/variables" as *;
+@use "src/styles/settings/variables" as *;
 
 .PeriodContainer {
   display: flex;
@@ -15,7 +15,7 @@
       max-width: 123px;
     }
 
-    @media (min-width: 1024px) {
+     @media (min-width: 1024px) {
       max-width: 280px;
       padding-left: 78px;
 
@@ -30,10 +30,8 @@
       }
     }
 
-     @media (min-width: 1920px) {
+    @media (min-width: 1920px) {
       max-width: 431px;
-    }
+    } 
   }
 }
-
-

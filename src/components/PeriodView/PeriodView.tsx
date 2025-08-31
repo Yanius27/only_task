@@ -7,10 +7,12 @@ import "swiper/css/pagination";
 import "swiper/css";
 import cn from "classnames";
 
-import { data } from "../../lib/data";
+import { data } from "../../../lib/data";
 import ArrowIcon from "src/assets/icons/arrow-left.svg";
-import { getFormattedNumber } from "../utils/getFormattedNumber";
-import { IPeriodView } from "../types/interfaces";
+import { getFormattedNumber } from "../../utils/getFormattedNumber";
+import { IPeriodView } from "../../types/interfaces";
+
+import "./PeriodView.scss";
 
 export default function PeriodView({ children, slidesCount, currentSlide, setCurrentPeriod }: IPeriodView) {
   const displayStartRef = useRef(data[0].period[0]);
@@ -19,6 +21,7 @@ export default function PeriodView({ children, slidesCount, currentSlide, setCur
   const swiperRef = useRef<HTMLDivElement | null>(null);
   const swiperInstanceRef = useRef<SwiperType | null>(null);
   const currentNumberRef = useRef<HTMLDivElement | null>(null);
+
   const prevRef = useRef<HTMLDivElement | null>(null);
   const nextRef = useRef<HTMLDivElement | null>(null);
 
@@ -47,6 +50,7 @@ export default function PeriodView({ children, slidesCount, currentSlide, setCur
       on: {
         slideChange({ isBeginning, isEnd, realIndex }) {
           setCurrentPeriod(realIndex);
+
           if (currentNumberRef.current) {
             const currentNumber = getFormattedNumber(realIndex);
             currentNumberRef.current.textContent = currentNumber;
@@ -108,7 +112,8 @@ export default function PeriodView({ children, slidesCount, currentSlide, setCur
   }, [prevRef.current, nextRef.current]);
 
   useEffect(() => {
-    swiperInstanceRef.current?.slideTo(currentSlide, 0);
+    swiperInstanceRef.current?.slideTo(currentSlide);
+
   }, [currentSlide]);
 
   return (
