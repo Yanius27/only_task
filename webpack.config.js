@@ -1,6 +1,6 @@
-import path from "path";
-import { fileURLToPath } from "url";
-import HtmlWebpackPlugin from "html-webpack-plugin";
+import path from 'path';
+import { fileURLToPath } from 'url';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 import { patchFs } from '@yarnpkg/pnpify';
 patchFs();
@@ -9,55 +9,57 @@ const __fileName = fileURLToPath(import.meta.url);
 const __dirName = path.dirname(__fileName);
 
 export default {
-  entry: "./src/index.tsx",
-  mode: "development",
+  entry: './src/index.tsx',
+  mode: 'development',
 
   output: {
-    path: path.resolve(__dirName, "dist"),
-    filename: "bundle.js",
-    clean: true
+    path: path.resolve(__dirName, 'dist'),
+    filename: 'bundle.js',
+    clean: true,
   },
 
   devServer: {
-    static: "./dist",
+    static: './dist',
     port: 3000,
     open: true,
-    hot: true
+    hot: true,
   },
 
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.svg$/,
-        use: [{
-          loader: "@svgr/webpack",
-          options: {
-            icon: true,
+        use: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              icon: true,
+            },
           },
-        }],
+        ],
       },
       {
         test: /\.s[ac]ss$/i,
         use: [
-          "style-loader",
-          "css-loader",
+          'style-loader',
+          'css-loader',
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
               sassOptions: {
-                includePaths: ["./src"],
+                includePaths: ['./src'],
               },
-            }
-          }
+            },
+          },
         ],
       },
       {
         test: /\.tsx?$/,
-        use: "ts-loader",
+        use: 'ts-loader',
         exclude: /node_modules/,
       },
       {
@@ -68,24 +70,24 @@ export default {
             options: {
               name: '[name].[ext]',
               outputPath: 'fonts/',
-              publicPath: '../fonts/'
-            }
-          }
-        ]
-      }
-    ]
+              publicPath: '../fonts/',
+            },
+          },
+        ],
+      },
+    ],
   },
 
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
       src: path.resolve(__dirName, 'src'),
-    }
+    },
   },
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html"
+      template: './public/index.html',
     }),
   ],
 };

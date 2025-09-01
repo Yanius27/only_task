@@ -1,9 +1,9 @@
-import PeriodContainer from "./components/PeriodContainer/PeriodContainer";
-import { PeriodProvider } from "./context/PeriodContext";
+import PeriodContainer from './components/PeriodContainer/PeriodContainer';
+import { PeriodProvider } from './context/PeriodContext';
 
-import FirstOrnament from "./assets/icons/ornament-1.svg";
-import SecondOrnament from "./assets/icons/ornament-2.svg";
-import CircleNavigation from "./components/CircleNavigation/CircleNavigation";
+import FirstOrnament from './assets/icons/ornament-1.svg';
+import SecondOrnament from './assets/icons/ornament-2.svg';
+import CircleNavigation from './components/CircleNavigation/CircleNavigation';
 
 export default function App() {
   return (

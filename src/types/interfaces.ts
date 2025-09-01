@@ -1,26 +1,31 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from 'react';
+
+export interface IPeriodState {
+  title: string;
+  index: number;
+}
 
 export interface IPeriodContext {
   currentPeriod: number;
-  periods: number[];
-  setPeriods: Dispatch<SetStateAction<number[]>>;
+  periods: IPeriodState[];
+  setPeriods: Dispatch<SetStateAction<IPeriodState[]>>;
   setCurrentPeriod: (index: number) => void;
 }
 
 export interface IFact {
-  year: number,
-  content: string
+  year: number;
+  content: string;
 }
 
 export interface IPeriod {
-  period: number[],
-  title: string,
-  facts: IFact[],
+  period: number[];
+  title: string;
+  facts: IFact[];
 }
 
 export interface IPeriodView {
-  children: React.ReactNode,
-  slidesCount: number,
-  currentSlide: number,
+  children: React.ReactNode;
+  slidesCount: number;
+  currentSlide: number;
   setCurrentPeriod: (index: number) => void;
 }

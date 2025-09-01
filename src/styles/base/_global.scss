@@ -1,11 +1,13 @@
-@use "../settings/colors" as *;
+@use '../settings/colors' as *;
 
 * {
   margin: 0;
   padding: 0;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   width: 100%;
   height: 100vh;
 }

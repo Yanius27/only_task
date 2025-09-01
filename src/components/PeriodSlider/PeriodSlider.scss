@@ -1,10 +1,9 @@
-@use "src/styles/settings/variables" as *;
-@use "src/styles/settings/colors" as *;
+@use 'src/styles/settings/variables' as *;
+@use 'src/styles/settings/colors' as *;
 
 .PeriodSlider {
   padding-top: 20px;
 
-  
   @media (max-width: 1023px) {
     position: absolute;
     z-index: 2;
@@ -13,7 +12,7 @@
     transform: translateY(-50%);
 
     &::before {
-      content: "";
+      content: '';
       display: block;
       height: 1px;
       width: 87.5vw;
@@ -36,7 +35,7 @@
 
     @media (min-width: 1024px) {
       display: block;
-    }  
+    }
   }
 
   .PeriodSlider__navigation-prev,
@@ -59,6 +58,11 @@
     cursor: pointer;
 
     filter: drop-shadow(0 0px 4px rgba(56, 119, 238, 0.1));
+
+    svg {
+      width: 10px;
+      height: 10px;
+    }
   }
 
   .PeriodSlider__navigation-prev.visible,
@@ -80,17 +84,20 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    
-    @media (max-width: 500px) {
+
+    @media (max-width: 499px) {
       max-width: 166px;
+    }
+
+    @media (min-width: 500px) and (max-width: 1023px) {
+      max-width: 250px;
     }
 
     @media (min-width: 1024px) {
       gap: 8px;
       max-height: 133px !important;
       max-width: 400px !important;
-    }  
-
+    }
 
     .PeriodSlider__swiper-slide-year {
       color: $year-color;
@@ -101,11 +108,11 @@
 
       @media (min-width: 1023px) and (max-width: 1919px) {
         font-size: $font-size-xs;
-      }  
+      }
 
       @media (min-width: 1920px) {
         font-size: $font-size-lg;
-      }  
+      }
     }
 
     .PeriodSlider__swiper-slide-content {
@@ -117,11 +124,11 @@
 
       @media (min-width: 1023px) and (max-width: 1919px) {
         font-size: $font-size-2xs;
-      }  
+      }
 
       @media (min-width: 1920px) {
         font-size: $font-size-base;
-      }  
+      }
     }
   }
 }

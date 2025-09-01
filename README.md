@@ -36,4 +36,3 @@ yarn start
 # или
 npm start
 ```
-

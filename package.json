@@ -7,7 +7,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack serve",
-    "build": "webpack --mode=prodaction"
+    "build": "webpack --mode=prodaction",
+    "format": "prettier --write \"**/*.{js,ts,tsx,jsx,json,css,scss,md}\"",
+    "format:check": "prettier --check \"**/*.{js,ts,tsx,jsx,json,css,scss,md}\""
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
@@ -20,6 +22,7 @@
     "file-loader": "^6.2.0",
     "gsap": "^3.13.0",
     "html-webpack-plugin": "^5.6.4",
+    "prettier": "^3.6.2",
     "sass": "^1.91.0",
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0",
