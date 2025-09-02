@@ -32,7 +32,7 @@ npm install
 3. **Запустить проект:**
 
 ```bash
-yarn start
+yarn dev
 # или
-npm start
+npm run dev
 ```
