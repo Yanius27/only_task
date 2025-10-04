@@ -20,7 +20,7 @@ export default function PeriodSlider({ items }: { items: IFact[] }) {
   const nextRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (!swiperRef.current) return;
+    if (!swiperRef.current || ! prevRef.current || !nextRef.current) return;
 
     swiperInstanceRef.current = new Swiper(swiperRef.current, {
       direction: 'horizontal',
@@ -44,8 +44,8 @@ export default function PeriodSlider({ items }: { items: IFact[] }) {
         },
       },
       navigation: {
-        prevEl: '.PeriodSlider__navigation-prev',
-        nextEl: '.PeriodSlider__navigation-next',
+        prevEl: prevRef.current,
+        nextEl: nextRef.current,
       },
       on: {
         slideChange: () => {

@@ -9,10 +9,18 @@ html,
 body,
 #root {
   width: 100%;
-  height: 100vh;
+  height: auto;
 }
 
 #root {
   background-color: $page-color;
   overflow: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: auto;
 }

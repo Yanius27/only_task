@@ -6,6 +6,7 @@ export interface IPeriodState {
 }
 
 export interface IPeriodContext {
+  data: IPeriod[],
   currentPeriod: number;
   periods: IPeriodState[];
   setPeriods: Dispatch<SetStateAction<IPeriodState[]>>;
@@ -25,6 +26,7 @@ export interface IPeriod {
 
 export interface IPeriodView {
   children: React.ReactNode;
+  data: IPeriod[],
   slidesCount: number;
   currentSlide: number;
   setCurrentPeriod: (index: number) => void;

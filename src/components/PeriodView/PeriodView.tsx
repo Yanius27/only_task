@@ -7,7 +7,6 @@ import 'swiper/css/pagination';
 import 'swiper/css';
 import cn from 'classnames';
 
-import { data } from '../../../lib/data';
 import ArrowIcon from 'src/assets/icons/arrow-left.svg';
 import { getFormattedNumber } from '../../utils/getFormattedNumber';
 import { IPeriodView } from '../../types/interfaces';
@@ -16,6 +15,7 @@ import './PeriodView.scss';
 
 export default function PeriodView({
   children,
+  data,
   slidesCount,
   currentSlide,
   setCurrentPeriod,
