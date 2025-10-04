@@ -36,3 +36,7 @@ yarn dev
 # или
 npm run dev
 ```
+
+4. **ТЗ**
+   
+https://docs.google.com/document/d/1Qy4MN7duYzm-Wr-rQ4TFApvUoxfuqGXdcyA8-vt5Dhg/edit?tab=t.0#heading=h.arjd18qpb9a9
